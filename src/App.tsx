@@ -5,19 +5,19 @@ import DateAndTime from "./components/DateAndTime";
 
 const boxs = [
   {
-    id: 1,
+    id: 0,
     title: "Social",
   },
   {
-    id: 2,
+    id: 1,
     title: "AI",
   },
   {
-    id: 3,
+    id: 2,
     title: "Front-End",
   },
   {
-    id: 4,
+    id: 3,
     title: "Movie",
   },
 ];
@@ -88,44 +88,44 @@ const links = [
       link: "https://tailwindcss.com/docs/guides/vite",
     },
     {
-      id: 12,
+      id: 13,
       title: "React",
       link: "https://react.dev/learn",
     },
     {
-      id: 12,
+      id: 14,
       title: "BoxIcon",
       link: "https://boxicons.com/",
     },
     {
-      id: 12,
+      id: 15,
       title: "GitHab",
       link: "https://github.com/",
     },
     {
-      id: 12,
+      id: 16,
       title: "Bootstrap Icon",
       link: "https://icons.getbootstrap.com/",
     },
     {
-      id: 12,
+      id: 17,
       title: "Figma",
       link: "https://www.figma.com/files/team/1345823970195625203/recents-and-sharing/recently-viewed?fuid=1345823968380987231",
     },
     {
-      id: 13,
+      id: 18,
       title: "UnSplash",
       link: "https://unsplash.com/wallpapers",
     },
   ],
   [
     {
-      id: 14,
+      id: 19,
       title: "KinoGo",
       link: "https://kinogo.inc/",
     },
     {
-      id: 15,
+      id: 20,
       title: "KinoPoisk",
       link: "https://www.kinopoisk.ru/?utm_referrer=www.google.com",
     },
@@ -133,15 +133,16 @@ const links = [
 ];
 
 const App = () => {
-  const [state, setState] = useState(1);
+  const [state, setState] = useState(0);
+
   return (
-    <main className="h-screen dark:bg-slate-800 p-12">
-      <div className="h-full rounded-xl glass px-6 space-y-8">
-        <header className="bg-opacity-75 rounded-lg pt-8 flex justify-between gap-3">
+    <main className="container lg:h-screen md:h-fit dark:bg-slate-800 p-12">
+      <div className="lg:h-full md:h-fit py-5 rounded-xl glass px-6 space-y-8">
+        <header className="bg-opacity-75 grid mt-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           {boxs.map((box) => (
             <Buttons
               title={box.title}
-              handleClick={setState}
+              handleClick={(id: number) => setState(id)}
               key={box.id}
               id={box.id}
             />
@@ -150,8 +151,8 @@ const App = () => {
         <article className="w-full">
           <DateAndTime />
         </article>
-        <article className="grid grid-cols-8 gap-4 mt-4">
-          {links[state - 1].map((link) => (
+        <article className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  lg:grid-cols-8 gap-4 mt-4 ">
+          {links[state].map((link) => (
             <Boxs key={link.id} link={link.link} title={link.title} />
           ))}
         </article>

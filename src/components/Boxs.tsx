@@ -8,7 +8,7 @@ const Boxs = ({ title, link }: Props) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-[120px] flex-1 items-end py-3 font-bold text-white justify-center rounded-2xl bg-blue-600 bg-opacity-50 hover:bg-opacity-100"
+      className="flex h-[120px] flex-1 items-end py-3 font-bold text-white justify-center rounded-2xl bg-blue-600 bg-opacity-50 hover:bg-opacity-100 duration-300 transition transform tran ease-in-out hover:scale-110"
     >
       {title}
     </a>

@@ -5,10 +5,10 @@ const DateAndTime = () => {
   setInterval(() => setTime(new Date()), 1000);
   return (
     <>
-      <div className="flex w-full text-[40px] font-bold text-white justify-center">
+      <div className="flex w-full lg:text-[40px] md:text-[35px] font-bold text-white justify-center">
         {time.toLocaleTimeString()}
       </div>
-      <div className="flex w-full text-2xl font-bold text-white justify-center">
+      <div className="flex w-full lg:text-2xl md:text-xl font-bold text-white justify-center">
         {time.toLocaleDateString()}
       </div>
     </>

@@ -7,7 +7,7 @@ const Buttons = ({ title, handleClick, id }: Props) => {
   return (
     <div
       onClick={() => handleClick(id)}
-      className="flex  hover:bg-opacity-100 flex-1 py-2 rounded-lg justify-center text-2xl font-bold text-white bg-blue-700 bg-opacity-70"
+      className="transition duration-300 ease-in-out transform hover:-translate-y-1 text-center font-bold text-xl hover:scale-105 bg-blue-500 text-white px-4 py-2 rounded-lg"
     >
       {title}
     </div>
